@@ -1,0 +1,24 @@
+<div>
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    (ngModelChange)="filterMethod()"
+  />
+  <table>
+    <th>Star wars</th>
+    <tr>
+      <td>Name</td>
+      <td>Eye Color</td>
+      <td>Birth Year</td>
+    </tr>
+    <tr *ngFor="let ppl of starWarsArray">
+      <td>{{ ppl.name }}</td>
+      <td>{{ ppl.eye_color }}</td>
+      <td>{{ ppl.birth_year }}</td>
+    </tr>
+  </table>
+</div>
+<button (click)="callPrevious()" [disabled]="!previousApiUrl">
+  Previous ppl
+</button>
+<button (click)="callNext()" [disabled]="!nextApiUrl">Next ppl</button>
